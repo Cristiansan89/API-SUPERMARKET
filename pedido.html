@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold h5" href="producto.html">Producto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold h5" href="compra.html">Compra</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link font-weight-bold h5" href="pedido.html">Pedido<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-danger my-2 my-sm-0 font-weight-bold" onclick="cerrar()">Cerrar
+                        Sessión</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-4">
+        <h2 class="mt-4 text-center font-weight-bold text-black">Lista de Pedidos</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="tablaPedidos"></tbody>
+        </table>
+    </div>
+
+    <script src="orders.js"></script>
+</body>
+
+</html>

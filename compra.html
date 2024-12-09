@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra</title>
+
+    <!-- Agregar el enlace a Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold h5" href="producto.html">Producto</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link font-weight-bold h5" href="compra.html">Compra<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold h5" href="pedido.html">Pedido</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-danger my-2 my-sm-0 font-weight-bold" onclick="cerrar()">Cerrar
+                        Sessión</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="my-2 card-body">
+        <div class="d-flex justify-content-center">
+            <div class="card" style="width: 50rem;">
+                <div class="card-body bg-light">
+                    <h1 class="text-center text-success font-weight-bold h2">Gesti&oacute;n de Compra</h1>
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 50rem;">
+                            <div class="card-body">
+                                <!-- Formulario para agregar producto de compra -->
+                                <div class="form-group">
+                                    <select id="productoSelect" class="form-control">
+                                        <option value="">-- Seleccione un Producto --</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="cantidadProducto" class="form-control"
+                                        placeholder="Cantidad" required />
+                                </div>
+                                <button onclick="realizarCompra()"
+                                    class="btn btn-success btn-block font-weight-bold">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container mt-3">
+        <h2 class="mt-4 text-center font-weight-bold text-primary">Mis Pedidos</h2>
+        <div class="pl-4 pr-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Descripci&oacute;n</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCompras"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="buys.js"></script>
+
+    <!-- Agregar los scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
